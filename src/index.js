@@ -8,6 +8,13 @@ import {createStore} from "redux";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const reducers = (state,action) => {
+
+    if (action.type ==='PLUS'){
+        return {
+            ...state,
+            count: state.count + 1
+        }
+    }
     console.log(state,action);
     return {
         count: 2,

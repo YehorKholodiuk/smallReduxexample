@@ -8,6 +8,7 @@ function App(props) {
             AppVersion:{props.av}
             <hr/>
             Count:{props.myCount}
+            <button onClick={props.plus}>Plus</button>
         </div>
     );
 }
@@ -18,4 +19,8 @@ const mapStateToProps = state => ({
 
 })
 
-export default connect(mapStateToProps)(App);
+const mapDispatchToProps = dispatch => ({
+    plus: () => dispatch({type:'PLUS'})
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
