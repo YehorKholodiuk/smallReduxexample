@@ -4,33 +4,9 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {Provider} from "react-redux";
-import {createStore} from "redux";
+import {store} from "./store";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const reducers = (state,action) => {
-
-    if (action.type ==='PLUS'){
-        return {
-            ...state,
-            count: state.count + 1
-        }
-    }
-
-    if (action.type ==='MINUS'){
-        return {
-            ...state,
-            count: state.count - 1
-        }
-    }
-
-
-    console.log(state,action);
-    return {
-        count: 2,
-        version:'33.55.66'
-    }
-}
-const store = createStore(reducers)
 root.render(
     <Provider store={store}>
         <React.StrictMode>
