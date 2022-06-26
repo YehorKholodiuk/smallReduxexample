@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import {connect} from "react-redux";
+import Controls from "./Controls";
 
 function App(props) {
     return (
@@ -8,8 +9,8 @@ function App(props) {
             AppVersion:{props.av}
             <hr/>
             Count:{props.myCount}
-            <button onClick={props.plus}>Plus</button>
-            <button onClick={props.minus}>Minus</button>
+
+            <Controls/>
         </div>
     );
 }
@@ -20,9 +21,6 @@ const mapStateToProps = state => ({
 
 })
 
-const mapDispatchToProps = dispatch => ({
-    plus: () => dispatch({type:'PLUS'}),
-    minus: () => dispatch({type:'MINUS'})
-})
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+
+export default connect(mapStateToProps)(App);
